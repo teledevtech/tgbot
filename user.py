@@ -9,7 +9,7 @@ from aiogram.types import Message, CallbackQuery, ReplyKeyboardMarkup, KeyboardB
 from aiogram.fsm.state import State, StatesGroup
 from aiogram.fsm.context import FSMContext
 import text
-from info import HEAD, TOKEN
+from info import HEAD, TOKEN, TGCHANNEL
 from aiogram import BaseMiddleware
 from typing import Callable, Dict, Any, Awaitable
 
@@ -583,7 +583,7 @@ async def cmf_Fdeee_text(message: Message, state: FSMContext):
     await bot.delete_message(chat_id=message.from_user.id,message_id=a.message_id-1)
     await bot.delete_message(chat_id=message.from_user.id,message_id=a.message_id-2)
     await bot.forward_message(
-        chat_id=text.TGCHANNEL,
+        chat_id=TGCHANNEL,
         from_chat_id=message.from_user.id,
         message_id=message.message_id
     )
